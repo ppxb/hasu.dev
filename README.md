@@ -1,5 +1,7 @@
-hasu.dev
+**[hasu.dev]()**
 
-my personal website powered by Vite
+my personal website powered by [Vite](https://vitejs.dev/)
 
-code is licensed under MIT.
+<br>
+
+<samp>code is licensed under <a href='./LICENSE'>MIT</a>.
