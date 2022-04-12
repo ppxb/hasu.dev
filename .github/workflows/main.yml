@@ -30,9 +30,6 @@ jobs:
 
       - name: Deploy
         uses: cross-the-world/scp-pipeline@master
-        env:
-          WELCOME: 'ssh scp ssh pipelines'
-          LASTSSH: 'Doing something after copying'
         with:
           host: ${{secrets.USER_HOST}}
           user: ${{secrets.USER_NAME}}
