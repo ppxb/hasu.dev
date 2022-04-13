@@ -37,8 +37,8 @@ export default defineConfig({
       dts: true,
     }),
     Componets({
-      extensions: ['vue'],
-      include: [/\.vue$/, /\.vue\?vue/],
+      extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: true,
     }),
     Unocss({

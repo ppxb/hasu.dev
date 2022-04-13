@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <Header />
   <main px-7 py-10>
     <router-view />
     <Footer />
@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from './components/Navbar.vue'
 useHead({
   meta: [
     { property: 'og:title', content: 'Hasu Chen' },
