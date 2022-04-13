@@ -1,21 +1,14 @@
-<script setup lang="ts">
-import { isDark, toggleDark } from '~/composables'
-</script>
-
 <template>
-  <nav text-xl mt-6 inline-flex gap-2>
-    <button class="icon-btn !outline-none" @click="toggleDark()">
-      <div v-if="isDark" i-carbon-moon></div>
-      <div v-else i-carbon-sun></div>
-    </button>
-
-    <a
-      class="icon-btn"
-      i-carbon-logo-github
-      rel="noreferrer"
-      href="https://github.com/ppxb/vite-template"
-      target="_blank"
-      title="GitHub"
-    />
-  </nav>
+  <div class="mt-10 mb-6 prose m-auto opacity-50 flex">
+    <span class="text-sm"
+      ><a
+        target="_blank"
+        href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+        style="color: inherit"
+        >CC BY-NC-SA 4.0</a
+      >
+      2022 - PRESENT © 蓮</span
+    >
+    <div class="flex-auto" />
+  </div>
 </template>

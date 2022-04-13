@@ -8,14 +8,9 @@ const go = () => {
 
 <template>
   <div>
-    <div i-carbon-campsite text-4xl inline-block />
     <p>
-      <a
-        rel="noreferrer"
-        href="https://github.com/ppxb/vite-template"
-        target="_blank"
-      >
-        Vite Template
+      <a rel="noreferrer" href="https://github.com/ppxb" target="_blank">
+        創造の思考
       </a>
     </p>
     <p>

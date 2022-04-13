@@ -21,9 +21,11 @@ export default defineConfig({
     }),
     Pages({
       extensions: ['vue', 'md'],
-      dirs: 'pages',
     }),
-    Markdown(),
+    Markdown({
+      wrapperComponent: 'post',
+      headEnabled: true,
+    }),
     AutoImport({
       imports: [
         'vue',
@@ -42,7 +44,7 @@ export default defineConfig({
     Unocss({
       theme: {
         fontFamily: {
-          sans: '"Inter", Inter var,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji'
+          sans: '"游明朝","Yu Mincho",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji'
         }
       }
     })

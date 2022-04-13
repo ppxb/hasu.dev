@@ -6,4 +6,11 @@
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  meta: [
+    { property: 'og:title', content: 'Hasu Chen' },
+    { name: 'description', content: "Hasu Chen's personal website" }
+  ]
+})
+</script>

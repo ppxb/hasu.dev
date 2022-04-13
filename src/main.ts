@@ -12,7 +12,6 @@ const routes = autoRoutes.map(i => ({
     alias: i.path.endsWith('/') ? `${i.path}index.html` : `${i.path}.html`
 }))
 
-
 const scrollBehavior = (to: any, from: any, savedPosition: any) => {
     if (savedPosition)
         return savedPosition

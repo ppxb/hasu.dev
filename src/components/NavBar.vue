@@ -1,65 +1,39 @@
 <script setup lang="ts">
-import { isDark } from '~/composables'
+import { isDark, toggleDark } from '~/composables'
 </script>
 
 <template>
-  <header class="header z-40">
+  <header header z-40>
     <router-link
-      class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
+      class="absolute lg:fixed m-6 select-none outline-none text-5xl dark:text-white"
       to="/"
       focusable="false"
     >
-      <img v-show="isDark" src="/logo-dark.svg?url" alt="logo" />
-      <img v-show="!isDark" src="/logo.svg?url" alt="logo" />
+      蓮
     </router-link>
-    <nav class="nav">
+    <nav class="nav" text-xl mt-6 inline-flex gap-2>
       <div class="spacer" />
       <div class="right">
         <router-link to="/posts">
           <span class="lt-md:hidden">Blog</span>
-          <div i-ri-article-line md:hidden />
+          <div i-carbon-sun md:hidden />
         </router-link>
-        <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
-        <router-link to="/podcasts" class="lt-md:hidden">
-          Podcasts
-        </router-link>
-        <router-link to="/streams" class="lt-md:hidden"> Streams </router-link>
+        <router-link to="/tags" class="lt-md:hidden"> Tags </router-link>
         <router-link to="/projects">
           <span class="lt-md:hidden">Projects</span>
-          <div i-ri-lightbulb-line class="md:hidden" />
         </router-link>
-        <router-link to="/sponsors-list" title="Sponsors">
-          <div i-ri-heart-line />
-        </router-link>
-        <router-link to="/bookmarks" title="Bookmarks">
-          <div i-ri-bookmark-line />
-        </router-link>
-        <router-link to="/notes" title="Notes">
-          <div i-ri-sticky-note-line />
-        </router-link>
-        <a
-          href="https://twitter.com/antfu7"
-          target="_blank"
-          title="Twitter"
-          class="lt-md:hidden"
-        >
-          <feather-twitter />
-        </a>
         <a
           href="https://github.com/antfu"
           target="_blank"
           title="GitHub"
           class="lt-md:hidden"
         >
-          <div i-uil-github-alt />
+          <div i-carbon-logo-github />
         </a>
-        <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
-          <div
-            i-la-rss-square
-            style="font-size: 1.25rem; margin: 0 -0.125rem"
-          />
+        <a class="lt-md:hidden" @click="toggleDark()">
+          <div v-if="isDark" i-carbon-moon></div>
+          <div v-else i-carbon-sun></div>
         </a>
-        <toggle-theme />
       </div>
     </nav>
   </header>
