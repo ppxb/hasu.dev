@@ -11,7 +11,7 @@ import { isDark, toggleDark } from '~/composables'
     >
       蓮
     </router-link>
-    <nav class="nav" text-xl mt-6 inline-flex gap-2>
+    <nav class="nav" text-xl mt-6 inline-flex gap-2 select-none>
       <div class="spacer" />
       <div class="right">
         <router-link to="/posts">

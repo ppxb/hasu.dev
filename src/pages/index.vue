@@ -1,26 +1,37 @@
 <template>
   <div>
     <p text-3xl>創造の思考</p>
-    <p mb-6>
+    <p mb-12>
       <em text-xl op75>I'm a full-stuck developer based in China.</em>
     </p>
-    <div>
-      <div v-for="(post, index) in posts">
-        <a :href="post.path" text-xl :key="post.path">
-          # Post{{ index + 1 }} {{ post.name?.toString().toUpperCase() }}
-        </a>
+    <AppLink
+      v-for="(route, index) in routes"
+      :key="route.path"
+      :to="route.path"
+    >
+      <div flex flex-col text-2xl select-none dark:text-white mb-4>
+        <p># {{ index + 1 }}</p>
+        <p>{{ route.title?.toString().toUpperCase() }}</p>
       </div>
-    </div>
+    </AppLink>
   </div>
 </template>
 
 <script setup lang="ts">
-import autoRoutes from 'virtual:generated-pages'
+import AppLink from '../components/AppLink.vue'
+const router = useRouter()
+const routes = router
+  .getRoutes()
+  .filter(i => i.path.startsWith('/posts/') && !i.path.endsWith('.html'))
+  .map(i => ({
+    path: i.path,
+    title: i.name
+  }))
 
-const routes = autoRoutes.map(i => ({
-  ...i,
-  alias: i.path.endsWith('/') ? `${i.path}index.html` : `${i.path}.html`
-}))
+// const routes = autoRoutes.map(i => ({
+//   ...i,
+//   alias: i.path.endsWith('/') ? `${i.path}index.html` : `${i.path}.html`
+// }))
 
-const posts = routes.filter(item => item.name?.toString().slice(6).length != 0)
+// const posts = routes.filter(item => item.name?.toString().slice(6).length != 0)
 </script>

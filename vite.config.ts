@@ -1,5 +1,5 @@
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import { resolve } from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Componets from 'unplugin-vue-components/vite'
@@ -7,11 +7,10 @@ import { defineConfig } from 'vite'
 import Markdown from 'vite-plugin-md'
 import Pages from 'vite-plugin-pages'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`
+      '~/': `${resolve(__dirname, 'src')}/`
     }
   },
   plugins: [
@@ -20,7 +19,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/]
     }),
     Pages({
-      extensions: ['vue', 'md'],
+      extensions: ['vue', 'md']
     }),
     Markdown({
       // wrapperComponent: 'post',
@@ -48,5 +47,9 @@ export default defineConfig({
         }
       }
     })
-  ]
+  ],
+  ssgOptions: {
+    formatting: 'minify',
+    format: 'cjs'
+  }
 })
