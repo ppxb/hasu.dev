@@ -2,7 +2,7 @@
   <a v-if="isExternalLink" v-bind="$attrs" :href="to" target="_blank">
     <slot />
   </a>
-  <router-link v-else v-bind="$props">
+  <router-link v-else v-bind="props">
     <slot />
   </router-link>
 </template>
@@ -13,6 +13,8 @@ import { computed } from 'vue'
 const props = defineProps<{
   to: string
 }>()
+
+console.log(props.to)
 
 const isExternalLink = computed(() => {
   return typeof props.to === 'string' && props.to.startsWith('http')
