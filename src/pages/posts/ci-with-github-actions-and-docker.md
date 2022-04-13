@@ -114,9 +114,17 @@ server {
 	add_header Strict-Transport-Security    max-age=60;
 
 
+    root /usr/share/nginx/html;
+    index  index.html index.htm;
+
+
     location / {
-    	root /usr/share/nginx/html;
+    	 try_files $uri $uri/ @router;
     	index  index.html index.htm;
+    }
+
+    location @router {
+      rewrite ^.*$ /index.html last;
     }
 }
 ```

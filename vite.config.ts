@@ -20,7 +20,8 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/]
     }),
     Pages({
-      extensions: ['vue', 'md']
+      extensions: ['vue', 'md'],
+      dirs: 'pages',
     }),
     Markdown(),
     AutoImport({
@@ -28,6 +29,7 @@ export default defineConfig({
         'vue',
         'vue-router',
         '@vueuse/core',
+        '@vueuse/head',
         'pinia'
       ],
       dts: true,
