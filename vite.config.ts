@@ -23,7 +23,7 @@ export default defineConfig({
       extensions: ['vue', 'md'],
     }),
     Markdown({
-      wrapperComponent: 'post',
+      // wrapperComponent: 'post',
       headEnabled: true,
     }),
     AutoImport({
