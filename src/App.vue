@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <!-- <Navbar /> -->
   <main px-7 py-10>
     <router-view />
     <Footer />
