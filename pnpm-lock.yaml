@@ -8,6 +8,8 @@ specifiers:
   '@vitejs/plugin-vue': ^2.3.1
   '@vueuse/core': ^8.2.5
   '@vueuse/head': ^0.7.6
+  dayjs: ^1.11.0
+  gray-matter: ^4.0.3
   nprogress: ^0.2.0
   pinia: ^2.0.13
   typescript: ^4.6.3
@@ -25,6 +27,7 @@ specifiers:
 dependencies:
   '@vueuse/core': registry.npmmirror.com/@vueuse/core/8.2.5_vue@3.2.32
   '@vueuse/head': registry.npmmirror.com/@vueuse/head/0.7.6_vue@3.2.32
+  dayjs: registry.npmmirror.com/dayjs/1.11.0
   nprogress: registry.npmmirror.com/nprogress/0.2.0
   pinia: registry.npmmirror.com/pinia/2.0.13_typescript@4.6.3+vue@3.2.32
   vue: registry.npmmirror.com/vue/3.2.32
@@ -36,6 +39,7 @@ devDependencies:
   '@types/nprogress': registry.npmmirror.com/@types/nprogress/0.2.0
   '@unocss/reset': registry.npmmirror.com/@unocss/reset/0.30.13
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.3.1_vite@2.9.2+vue@3.2.32
+  gray-matter: registry.npmmirror.com/gray-matter/4.0.3
   typescript: registry.npmmirror.com/typescript/4.6.3
   unocss: registry.npmmirror.com/unocss/0.30.13
   unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.7.1_@vueuse+core@8.2.5+vite@2.9.2
@@ -851,6 +855,12 @@ packages:
       whatwg-mimetype: registry.npmmirror.com/whatwg-mimetype/3.0.0
       whatwg-url: registry.npmmirror.com/whatwg-url/10.0.0
     dev: true
+
+  registry.npmmirror.com/dayjs/1.11.0:
+    resolution: {integrity: sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.0.tgz}
+    name: dayjs
+    version: 1.11.0
+    dev: false
 
   registry.npmmirror.com/debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/-/debug-4.3.4.tgz}

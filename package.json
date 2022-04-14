@@ -10,6 +10,7 @@
   "dependencies": {
     "@vueuse/core": "^8.2.5",
     "@vueuse/head": "^0.7.6",
+    "dayjs": "^1.11.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.32",
@@ -21,6 +22,7 @@
     "@types/nprogress": "^0.2.0",
     "@unocss/reset": "^0.30.13",
     "@vitejs/plugin-vue": "^2.3.1",
+    "gray-matter": "^4.0.3",
     "typescript": "^4.6.3",
     "unocss": "^0.30.13",
     "unplugin-auto-import": "^0.7.1",

@@ -1,4 +1,6 @@
 import vue from '@vitejs/plugin-vue'
+import fs from 'fs'
+import matter from 'gray-matter'
 import { resolve } from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -13,13 +15,29 @@ export default defineConfig({
       '~/': `${resolve(__dirname, 'src')}/`
     }
   },
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+      'dayjs',
+      'dayjs/plugin/localizedFormat'
+    ]
+  },
   plugins: [
     vue({
       reactivityTransform: true,
       include: [/\.vue$/, /\.md$/]
     }),
     Pages({
-      extensions: ['vue', 'md']
+      extensions: ['vue', 'md'],
+      extendRoute(route) {
+        const path = resolve(__dirname, route.component.slice(1))
+        const md = fs.readFileSync(path, 'utf-8')
+        const { data } = matter(md)
+        route.meta = Object.assign(route.meta || {}, { frontmatter: data })
+
+      }
     }),
     Markdown({
       // wrapperComponent: 'post',

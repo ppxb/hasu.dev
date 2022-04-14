@@ -1,15 +1,15 @@
 <template>
   <div mt-10 mb-6 m-auto opacity-50 flex>
-    <span text-sm
-      ><a
+    <span text-sm>
+      © 2022 - Build by
+      <a
         target="_blank"
-        href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+        href="https://gitub.com/ppxb"
         style="color: inherit"
         hover:underline
-        >CC BY-NC-SA 4.0</a
+        >蓮</a
       >
-      2022 - PRESENT © 蓮</span
-    >
+    </span>
     <div class="flex-auto" />
   </div>
 </template>

@@ -3,7 +3,7 @@ import { isDark, toggleDark } from '~/composables'
 </script>
 
 <template>
-  <header header z-40>
+  <header z-40>
     <router-link
       class="absolute lg:fixed m-6 select-none outline-none text-5xl dark:text-white"
       to="/"
@@ -13,7 +13,7 @@ import { isDark, toggleDark } from '~/composables'
     </router-link>
     <nav class="nav" text-xl mt-6 inline-flex gap-2 select-none>
       <div class="spacer" />
-      <div class="right">
+      <div class="right" text-base>
         <router-link to="/posts">
           <span class="lt-md:hidden">Blog</span>
           <div i-carbon-sun md:hidden />
