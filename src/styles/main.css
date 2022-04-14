@@ -62,3 +62,10 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--h-scrollbar-hover);
 }
+
+.prose {
+  color: var(--fg);
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}

@@ -7,6 +7,7 @@ declare module '@vue/runtime-core' {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
+    Post: typeof import('./src/components/Post.vue')['default']
     PostList: typeof import('./src/components/PostList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

@@ -40,8 +40,15 @@ export default defineConfig({
       }
     }),
     Markdown({
-      // wrapperComponent: 'post',
+      wrapperComponent: 'post',
       headEnabled: true,
+      wrapperClasses: 'prose m-auto',
+      markdownItOptions: {
+        quotes: '""\'\'',
+      },
+      markdownItSetup(md) {
+
+      }
     }),
     AutoImport({
       imports: [
