@@ -4,7 +4,7 @@
       <div py2 op50>{ nothing here yet }</div>
     </template>
     <app-link
-      v-for="route in posts"
+      v-for="(route, index) in posts"
       :key="route.path"
       dark:text-white
       block
@@ -16,6 +16,7 @@
       w-fit
     >
       <li class="no-underline">
+        <div text-base># {{ index + 1 }}</div>
         <div text-lg mb-1>
           {{ route.title }}
         </div>
