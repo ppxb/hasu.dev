@@ -2,14 +2,14 @@
   <div>
     <p text-3xl>創造の思考</p>
     <p mb-12>
-      <em text-xl op75>I'm a full-stuck developer based in China.</em>
+      <em text-xl op75>I'm a full-stack devoloper based in china</em>
     </p>
     <AppLink
       v-for="(route, index) in routes"
       :key="route.path"
       :to="route.path"
     >
-      <div flex flex-col text-2xl select-none dark:text-white mb-4>
+      <div flex flex-col text-base select-none dark:text-white mb-4>
         <p># {{ index + 1 }}</p>
         <p>{{ route.title?.toString().toUpperCase() }}</p>
       </div>
