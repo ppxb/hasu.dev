@@ -3,34 +3,32 @@ import { isDark, toggleDark } from '~/composables'
 </script>
 
 <template>
-  <header z-40>
+  <header z-99>
     <router-link
-      class="absolute lg:fixed m-6 select-none outline-none text-5xl dark:text-white"
+      class="absolute lg:fixed m-6 select-none outline-none text-4xl dark:text-white"
       to="/"
-      focusable="false"
     >
       蓮
     </router-link>
-    <nav class="nav" text-xl mt-6 inline-flex gap-2 select-none>
+    <nav class="nav" text-xl inline-flex gap-2 select-none>
       <div class="spacer" />
       <div class="right" text-base>
         <router-link to="/posts">
           <span class="lt-md:hidden">Blog</span>
-          <div i-carbon-sun md:hidden />
+          <div i-carbon-align-box-bottom-center md:hidden />
         </router-link>
-        <router-link to="/tags" class="lt-md:hidden"> Tags </router-link>
+        <router-link to="/tags">
+          <span class="lt-md:hidden">Tags</span>
+          <div i-carbon-hashtag md:hidden></div>
+        </router-link>
         <router-link to="/projects">
           <span class="lt-md:hidden">Projects</span>
+          <div i-carbon-gradient md:hidden></div>
         </router-link>
-        <a
-          href="https://github.com/antfu"
-          target="_blank"
-          title="GitHub"
-          class="lt-md:hidden"
-        >
+        <a href="https://github.com/antfu" target="_blank" title="GitHub">
           <div i-carbon-logo-github />
         </a>
-        <a class="lt-md:hidden" @click="toggleDark()">
+        <a @click="toggleDark()">
           <div v-if="isDark" i-carbon-moon></div>
           <div v-else i-carbon-sun></div>
         </a>
@@ -40,14 +38,6 @@ import { isDark, toggleDark } from '~/composables'
 </template>
 
 <style scoped>
-.header h1 {
-  margin-bottom: 0;
-}
-.logo {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-}
 .nav {
   padding: 2rem;
   width: 100%;
@@ -58,9 +48,7 @@ import { isDark, toggleDark } from '~/composables'
 .nav > * {
   margin: auto;
 }
-.nav img {
-  margin-bottom: 0;
-}
+
 .nav a {
   cursor: pointer;
   text-decoration: none;

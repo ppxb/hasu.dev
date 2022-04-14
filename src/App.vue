@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <main px-7 py-10>
+  <main px-7>
     <router-view />
     <Footer />
   </main>
@@ -14,3 +14,9 @@ useHead({
   ]
 })
 </script>
+
+<style>
+#app {
+  height: 100vh;
+}
+</style>

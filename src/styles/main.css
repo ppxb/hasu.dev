@@ -2,6 +2,7 @@
   --h-bg: #fff;
   --h-scrollbar: #eee;
   --h-scrollbar-hover: #ddd;
+  --h-nprogress-bg: #233;
 }
 
 html {
@@ -12,10 +13,11 @@ html.dark {
   --h-bg: #121212;
   --h-scrollbar: #333;
   --h-scrollbar-hover: #444;
+  --h-nprogress-bg: #fff;
 }
 
 html {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 #nprogress {
@@ -23,7 +25,7 @@ html {
 }
 
 #nprogress .bar {
-  background: #233;
+  background: var(--h-nprogress-bg);
   opacity: 0.75;
   position: fixed;
   z-index: 1006;
@@ -58,11 +60,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--h-scrollbar-hover);
-}
-
-.prose {
-  color: var(--fg);
-  max-width: 65ch;
-  font-size: 1rem;
-  line-height: 1.75;
 }

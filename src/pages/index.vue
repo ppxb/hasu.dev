@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <p text-3xl>創造の思考</p>
-    <p mb-12>
-      <p>
-        Hey 👏
-      </p>
-      <p>
-        I'm ppxb,a full-stack devoloper based in china
-      </p>
-    </p>
-   <post-list />
+  <div class="flex items-end justify-around wrapper">
+    <div>
+      <h1 text-8xl mb-4>創造の思考</h1>
+      <p text-sm>FOR CODING BETTER</p>
+    </div>
+    <post-list />
   </div>
 </template>
 
+<style scoped>
+.wrapper {
+  height: calc(100vh - 200px);
+}
+</style>
