@@ -34,9 +34,6 @@ html {
 }
 
 * {
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
   scrollbar-color: var(--h-scrollbar) var(--h-bg);
 }
 
