@@ -2,7 +2,9 @@
   <div>
     <p text-3xl>創造の思考</p>
     <p mb-12>
-      <em text-xl op75>I'm a full-stack devoloper based in china</em>
+      <p>
+        Hey,i'm ppxb,a full-stack devoloper based in china
+      </p>
     </p>
     <AppLink
       v-for="(route, index) in routes"
@@ -18,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import AppLink from '../components/AppLink.vue'
+import AppLink from '../components/AppLink.vue';
 const router = useRouter()
 const routes = router
   .getRoutes()

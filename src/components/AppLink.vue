@@ -14,8 +14,6 @@ const props = defineProps<{
   to: string
 }>()
 
-console.log(props.to)
-
 const isExternalLink = computed(() => {
   return typeof props.to === 'string' && props.to.startsWith('http')
 })
