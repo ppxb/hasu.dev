@@ -25,7 +25,7 @@ import { isDark, toggleDark } from '~/composables'
           <span class="lt-md:hidden">Projects</span>
           <div i-carbon-gradient md:hidden></div>
         </router-link>
-        <a href="https://github.com/antfu" target="_blank" title="GitHub">
+        <a href="https://github.com/ppxb" target="_blank" title="GitHub">
           <div i-carbon-logo-github />
         </a>
         <a @click="toggleDark()">
