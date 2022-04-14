@@ -4,7 +4,7 @@
       © 2022 - Build by
       <a
         target="_blank"
-        href="https://gitub.com/ppxb"
+        href="https://github.com/ppxb"
         style="color: inherit"
         hover:underline
         >蓮</a
