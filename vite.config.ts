@@ -1,6 +1,10 @@
 import vue from '@vitejs/plugin-vue'
 import fs from 'fs'
 import matter from 'gray-matter'
+import { default as anchor, default as archor } from 'markdown-it-anchor'
+import LinkAttributes from 'markdown-it-link-attributes'
+// @ts-ignore
+import TOC from 'markdown-it-table-of-contents'
 import { resolve } from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -47,6 +51,24 @@ export default defineConfig({
         quotes: '""\'\'',
       },
       markdownItSetup(md) {
+        md.use(archor, {
+          permalink: anchor.permalink.linkInsideHeader({
+            symbol: '#',
+            renderAttrs: () => ({ 'aria-hidden': 'true' })
+          })
+        })
+
+        md.use(LinkAttributes, {
+          matcher: (link: string) => /^https?:\/\//.test(link),
+          attrs: {
+            target: '_blank',
+            rel: 'noopener'
+          }
+        })
+
+        md.use(TOC, {
+          includeLevel: [1, 2, 3],
+        })
 
       }
     }),

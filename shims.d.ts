@@ -14,3 +14,7 @@ declare module 'vue-router' {
     frontmatter: any
   }
 }
+
+// declare module 'markdown-it-table-of-contents' {
+//   export { TOC as default } from 'markdown-it-table-of-contents'
+// }

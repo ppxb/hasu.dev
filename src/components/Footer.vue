@@ -1,5 +1,5 @@
 <template>
-  <div mt-10 mb-6 m-auto opacity-50 flex>
+  <div prose mt-10 mb-6 m-auto opacity-50 flex>
     <span text-sm>
       © 2022 - Build by
       <a

@@ -5,6 +5,8 @@ import autoRoutes from 'virtual:generated-pages'
 import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
 import './styles/main.css'
+import './styles/markdown.css'
+import './styles/prose.css'
 
 
 const routes = autoRoutes.map(i => ({
