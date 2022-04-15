@@ -10,7 +10,7 @@ import { isDark, toggleDark } from '~/composables'
       class="max-w-screen-lg mx-auto h-full flex justify-between items-center"
     >
       <router-link
-        class="text-2xl font-bold select-none outline-none"
+        class="text-2xl font-bold select-none outline-none dark:text-white"
         focusable="false"
         to="/"
       >
