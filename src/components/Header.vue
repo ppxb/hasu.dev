@@ -3,16 +3,20 @@ import { isDark, toggleDark } from '~/composables'
 </script>
 
 <template>
-  <header z-99>
-    <router-link
-      class="absolute lg:fixed m-6 select-none outline-none text-4xl dark:text-white"
-      to="/"
+  <header
+    class="fixed top-0 inset-x-0 z-50 h-$h-header-height px-6 bg-white dark:bg-dark-800 !bg-opacity-80 backdrop-blur"
+  >
+    <div
+      class="max-w-screen-lg mx-auto h-full flex justify-between items-center"
     >
-      蓮
-    </router-link>
-    <nav class="nav" text-xl inline-flex gap-2 select-none>
-      <div class="spacer" />
-      <div class="right" text-base>
+      <router-link
+        class="text-2xl font-bold select-none outline-none"
+        focusable="false"
+        to="/"
+      >
+        蓮
+      </router-link>
+      <nav class="nav">
         <router-link to="/posts">
           <span class="lt-md:hidden">Posts</span>
           <div i-ri-article-line md:hidden />
@@ -32,21 +36,16 @@ import { isDark, toggleDark } from '~/composables'
           <div v-if="isDark" i-ri-moon-line></div>
           <div v-else i-ri-sun-line></div>
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 </template>
 
 <style scoped>
 .nav {
-  padding: 2rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto max-content;
-  box-sizing: border-box;
-}
-.nav > * {
-  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .nav a {
@@ -54,19 +53,15 @@ import { isDark, toggleDark } from '~/composables'
   text-decoration: none;
   color: inherit;
   transition: opacity 0.2s ease;
-  opacity: 0.6;
+  opacity: 0.7;
   outline: none;
+  padding: 0.5rem;
 }
 .nav a:hover {
   opacity: 1;
   text-decoration-color: inherit;
 }
-.nav .right {
-  display: grid;
-  grid-gap: 1.2rem;
-  grid-auto-flow: column;
-}
-.nav .right > * {
-  margin: auto;
+.backdrop-blur {
+  backdrop-filter: blur(8px);
 }
 </style>

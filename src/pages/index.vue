@@ -2,7 +2,6 @@
   <div class="flex items-end justify-around wrapper">
     <div>
       <h1 text-8xl mb-4>創造の思考</h1>
-      <p text-sm>FOR CODING BETTER</p>
     </div>
     <post-list />
   </div>
