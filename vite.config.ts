@@ -5,6 +5,7 @@ import { default as anchor, default as archor } from 'markdown-it-anchor'
 import LinkAttributes from 'markdown-it-link-attributes'
 // @ts-ignore
 import TOC from 'markdown-it-table-of-contents'
+import Prisma from 'markdown-it-prism'
 import { resolve } from 'path'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -15,9 +16,9 @@ import Pages from 'vite-plugin-pages'
 
 export default defineConfig({
   resolve: {
-    alias: {
-      '~/': `${resolve(__dirname, 'src')}/`
-    }
+    alias: [
+      { find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
+    ]
   },
   optimizeDeps: {
     include: [
@@ -30,27 +31,28 @@ export default defineConfig({
   },
   plugins: [
     vue({
-      reactivityTransform: true,
       include: [/\.vue$/, /\.md$/]
     }),
+
     Pages({
       extensions: ['vue', 'md'],
       extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1))
+
         const md = fs.readFileSync(path, 'utf-8')
         const { data } = matter(md)
         route.meta = Object.assign(route.meta || {}, { frontmatter: data })
-
       }
     }),
     Markdown({
-      wrapperComponent: 'post',
+      wrapperComponent: 'Post',
       headEnabled: true,
       wrapperClasses: 'prose m-auto',
       markdownItOptions: {
         quotes: '""\'\'',
       },
       markdownItSetup(md) {
+        md.use(Prisma)
         md.use(archor, {
           permalink: anchor.permalink.linkInsideHeader({
             symbol: '#',
@@ -77,23 +79,16 @@ export default defineConfig({
         'vue',
         'vue-router',
         '@vueuse/core',
-        '@vueuse/head',
-        'pinia'
+        '@vueuse/head'
       ],
-      dts: true,
+      dts: 'src/auto-imports.d.ts',
     }),
     Componets({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: true,
+      dts: 'src/components.d.ts',
     }),
-    Unocss({
-      theme: {
-        fontFamily: {
-          sans: '"Inter",serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji'
-        }
-      }
-    })
+    Unocss()
   ],
   ssgOptions: {
     formatting: 'minify',

@@ -1,20 +1,22 @@
 import '@unocss/reset/tailwind.css'
-import NProgress from 'nprogress'
 import 'uno.css'
-import autoRoutes from 'virtual:generated-pages'
-import { ViteSSG } from 'vite-ssg'
-import App from './App.vue'
 import './styles/main.css'
 import './styles/markdown.css'
 import './styles/prose.css'
 
+import NProgress from 'nprogress'
+import autoRoutes from 'virtual:generated-pages'
+import { ViteSSG } from 'vite-ssg'
+import App from './App.vue'
+
+import type { RouterScrollBehavior } from 'vue-router'
 
 const routes = autoRoutes.map(i => ({
     ...i,
     alias: i.path.endsWith('/') ? `${i.path}index.html` : `${i.path}.html`
 }))
 
-const scrollBehavior = (to: any, from: any, savedPosition: any) => {
+const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
     if (savedPosition)
         return savedPosition
     else

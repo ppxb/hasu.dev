@@ -4,11 +4,11 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AppLink: typeof import('./src/components/AppLink.vue')['default']
-    Footer: typeof import('./src/components/Footer.vue')['default']
-    Header: typeof import('./src/components/Header.vue')['default']
-    Post: typeof import('./src/components/Post.vue')['default']
-    PostList: typeof import('./src/components/PostList.vue')['default']
+    AppLink: typeof import('./components/AppLink.vue')['default']
+    Footer: typeof import('./components/Footer.vue')['default']
+    Header: typeof import('./components/Header.vue')['default']
+    Post: typeof import('./components/Post.vue')['default']
+    PostList: typeof import('./components/PostList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

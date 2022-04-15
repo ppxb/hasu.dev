@@ -14,23 +14,23 @@ import { isDark, toggleDark } from '~/composables'
       <div class="spacer" />
       <div class="right" text-base>
         <router-link to="/posts">
-          <span class="lt-md:hidden">Blog</span>
-          <div i-carbon-align-box-bottom-center md:hidden />
+          <span class="lt-md:hidden">Posts</span>
+          <div i-ri-article-line md:hidden />
         </router-link>
         <router-link to="/tags">
           <span class="lt-md:hidden">Tags</span>
-          <div i-carbon-hashtag md:hidden></div>
+          <div i-ri-hashtag md:hidden></div>
         </router-link>
-        <router-link to="/projects">
-          <span class="lt-md:hidden">Projects</span>
-          <div i-carbon-gradient md:hidden></div>
+        <router-link to="/about">
+          <span class="lt-md:hidden">About</span>
+          <div i-ri-bear-smile-line md:hidden></div>
         </router-link>
         <a href="https://github.com/ppxb" target="_blank" title="GitHub">
-          <div i-carbon-logo-github />
+          <div i-uil-github-alt />
         </a>
         <a @click="toggleDark()">
-          <div v-if="isDark" i-carbon-moon></div>
-          <div v-else i-carbon-sun></div>
+          <div v-if="isDark" i-ri-moon-line></div>
+          <div v-else i-ri-sun-line></div>
         </a>
       </div>
     </nav>
