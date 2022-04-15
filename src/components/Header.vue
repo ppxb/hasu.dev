@@ -4,7 +4,7 @@ import { isDark, toggleDark } from '~/composables'
 
 <template>
   <header
-    class="fixed top-0 inset-x-0 z-50 h-$h-header-height px-6 bg-white dark:bg-dark-800 !bg-opacity-80 backdrop-blur"
+    class="fixed top-0 inset-x-0 z-50 h-$header-height px-6 !bg-opacity-80 backdrop-blur"
   >
     <div
       class="max-w-screen-lg mx-auto h-full flex justify-between items-center"
