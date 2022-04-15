@@ -4,7 +4,6 @@ import './styles/main.css'
 import './styles/markdown.css'
 import './styles/prose.css'
 
-import NProgress from 'nprogress'
 import autoRoutes from 'virtual:generated-pages'
 import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
@@ -25,11 +24,5 @@ const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
 
 export const createApp = ViteSSG(
     App,
-    { routes, scrollBehavior },
-    ({ router, isClient }) => {
-        if (isClient) {
-            router.beforeEach(() => { NProgress.start() })
-            router.afterEach(() => { NProgress.done() })
-        }
-    }
+    { routes, scrollBehavior }
 )
