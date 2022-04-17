@@ -61,4 +61,5 @@ const posts: Post[] = router
     date: i.meta.frontmatter.date,
     duration: i.meta.frontmatter.duration
   }))
+  .slice(0, 5)
 </script>

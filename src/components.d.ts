@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./components/Header.vue')['default']
     Post: typeof import('./components/Post.vue')['default']
     PostList: typeof import('./components/PostList.vue')['default']
+    RecentlyPosts: typeof import('./components/RecentlyPosts.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

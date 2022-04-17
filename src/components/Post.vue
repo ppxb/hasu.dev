@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="frontmatter.display ?? frontmatter.title"
-    class="prose m-auto mb-8"
+    class="prose m-auto mb-8 py-10"
   >
     <h1 class="mb-0">
       {{ frontmatter.display ?? frontmatter.title }}

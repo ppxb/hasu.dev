@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <main px-7>
+  <main px-7 mt-18>
     <router-view />
     <Footer />
   </main>
@@ -14,9 +14,3 @@ useHead({
   ]
 })
 </script>
-
-<style>
-#app {
-  height: 100vh;
-}
-</style>
